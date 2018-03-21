@@ -83,7 +83,7 @@ high_threshold = 150
 edges = canny(blur_gray, low_threshold, high_threshold)
 
 imshape = image.shape
-vertices = np.array([[(0, imshape[0]), (520, 290), (540, 290), (imshape[1], imshape[0])]], dtype=np.int32)
+vertices = np.array([[(0, imshape[0]), (520, 280), (550, 350), (imshape[1], imshape[0])]], dtype=np.int32)
 masked_image = region_of_interest(edges, vertices)
 
 rho = 1
@@ -91,7 +91,7 @@ theta = np.pi / 180
 threshold = 1
 min_line_length = 7
 max_line_gap = 2
-line_image = hough_lines(edges, rho, theta, threshold, min_line_length, max_line_gap)
+line_image = hough_lines(masked_image, rho, theta, threshold, min_line_length, max_line_gap)
 
 
 lines_edges = weighted_img(line_image, image)
@@ -99,3 +99,4 @@ lines_edges = weighted_img(line_image, image)
 # Итоговое изображение
 cv2.imshow("Original image", lines_edges)
 cv2.waitKey(0)
+cv2.imwrite("Result.jpg", lines_edges)
