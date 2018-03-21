@@ -12,7 +12,7 @@ def grayscale(img):
     Трансформируем наше изображение в один цветовой канал,
     то есть проще говоря, в бесцветное.
     """
-    return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    return cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 
 def canny(img, low_threshold, high_threshold):
@@ -35,7 +35,7 @@ def region_of_interest(img, vertices):
 
     if len(img.shape) > 2:
         channel_count = img.shape[2]  # i.e. 3 or 4 depending on your image
-        ignore_mask_color = (255,) * channel_count
+        ignore_mask_color = (255, 0, 0) * channel_count
     else:
         ignore_mask_color = 255
 
@@ -46,9 +46,9 @@ def region_of_interest(img, vertices):
     return masked_image
 
 
-def draw_lines(img, lines, color=[255, 0, 0], thickness=2):
+def draw_lines(img, lines, color, thickness=2):
     """
-    Для прорисовки линей в видео
+    Для отрисовки линий в изображении/видео
     """
     for line in lines:
         for x1, y1, x2, y2 in line:
@@ -57,11 +57,12 @@ def draw_lines(img, lines, color=[255, 0, 0], thickness=2):
 
 def hough_lines(img, rho, theta, threshold, min_line_len, max_line_gap):
     """
-    Возвращает изображение с high lines.
+    Возвращает изображение с hough lines.
     """
     lines = cv2.HoughLinesP(img, rho, theta, threshold, np.array([]), minLineLength=min_line_len, maxLineGap=max_line_gap)
     line_img = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.uint8)
-    draw_lines(line_img, lines)
+    red = [0, 0, 255]
+    draw_lines(line_img, lines, red)
     return line_img
 
 
@@ -74,7 +75,7 @@ def weighted_img(img, initial_img, α=0.8, β=1., γ=0.):
 
 gray = grayscale(image)
 
-kernel_size = 5
+kernel_size = 7
 blur_gray = gaussian_blur(gray, kernel_size)
 
 low_threshold = 50
@@ -82,14 +83,14 @@ high_threshold = 150
 edges = canny(blur_gray, low_threshold, high_threshold)
 
 imshape = image.shape
-vertices = np.array([[(0, imshape[0]), (450, 290), (490, 290), (imshape[1], imshape[0])]], dtype=np.int32)
+vertices = np.array([[(0, imshape[0]), (520, 290), (540, 290), (imshape[1], imshape[0])]], dtype=np.int32)
 masked_image = region_of_interest(edges, vertices)
 
 rho = 1
 theta = np.pi / 180
 threshold = 1
-min_line_length = 5
-max_line_gap = 1
+min_line_length = 7
+max_line_gap = 2
 line_image = hough_lines(edges, rho, theta, threshold, min_line_length, max_line_gap)
 
 
@@ -98,4 +99,3 @@ lines_edges = weighted_img(line_image, image)
 # Итоговое изображение
 cv2.imshow("Original image", lines_edges)
 cv2.waitKey(0)
-
