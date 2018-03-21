@@ -12,4 +12,4 @@
 
 Можно поиграться с параметрами для лучшей точности определения. 
 
-![alt text](results/Result.png)
+![alt text](results/Result.jpg)
