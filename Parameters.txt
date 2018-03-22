@@ -1,0 +1,41 @@
+Параметры для изображения SolidWhiteRight:
+kernel_size = 7
+
+low_threshold = 50
+high_threshold = 150
+
+vertices = np.array([[(0, imshape[0]), (520, 280), (550, 350), (imshape[1], imshape[0])]], dtype=np.int32)
+
+rho = 1
+theta = np.pi / 180
+threshold = 1
+min_line_length = 7
+max_line_gap = 2
+
+Параметры для изображения SolidWhiteCurve:
+kernel_size = 3
+
+low_threshold = 50
+high_threshold = 140
+
+vertices = np.array([[(0, imshape[0]), (470, 320), (540, 335), (imshape[1], imshape[0])]], dtype=np.int32)
+
+rho = 1
+theta = np.pi / 180
+threshold = 1
+min_line_length = 5
+max_line_gap = 4
+
+Параметры для изображения SoildYellowCurve:
+kernel_size = 3
+
+low_threshold = 50
+high_threshold = 185
+
+vertices = np.array([[(0, imshape[0]), (470, 320), (540, 335), (imshape[1], imshape[0])]], dtype=np.int32)
+
+rho = 1
+theta = np.pi / 180
+threshold = 1
+min_line_length = 5
+max_line_gap = 4
