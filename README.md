@@ -25,10 +25,11 @@
 - vertices
 Вершины четырехугольника. Нам нужна только область дороги, в нашем случае
 четырехугольник с вершинами, указанными в vertices.
+
 Есть ещё параметры, которые влияют на поиск, но там много математики, поэтому
 лучше прослушать курс : https://classroom.udacity.com/courses/ud013-preview/
 
 
-![alt text](results/SolidWhiteRight_Result.jpg)
-![alt text](results/SolidWhiteCurve_Result.jpg)
-![alt text](results/SolidYellowCurve_Result.jpg)
+![alt text](results/solidWhiteRight_Result.jpg)
+![alt text](results/solidWhiteCurve_Result.jpg)
+![alt text](results/solidYellowCurve_Result.jpg)

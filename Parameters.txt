@@ -1,4 +1,4 @@
-Параметры для изображения SolidWhiteRight:
+Picture SolidWhiteRight:
 kernel_size = 7
 
 low_threshold = 50
@@ -12,7 +12,7 @@ threshold = 1
 min_line_length = 7
 max_line_gap = 2
 
-Параметры для изображения SolidWhiteCurve:
+Picture SolidWhiteCurve:
 kernel_size = 3
 
 low_threshold = 50
@@ -26,7 +26,7 @@ threshold = 1
 min_line_length = 5
 max_line_gap = 4
 
-Параметры для изображения SoildYellowCurve:
+Picture SoildYellowCurve:
 kernel_size = 3
 
 low_threshold = 50
