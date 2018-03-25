@@ -32,9 +32,7 @@
 Есть ещё параметры, которые влияют на поиск, но там много математики, поэтому
 лучше прослушать курс : https://classroom.udacity.com/courses/ud013-preview/
 
-Мои результаты ниже!
+Примеры ниже. Больше результатов можно посмотреть (включая поиск линий на видео) в папке results.
 
-<iframe width="854" height="480" src="results/solidWhiteRight.mp4" frameborder="0" allowfullscreen></iframe>
 ![alt text](results/solidWhiteRight_Result.jpg)
 ![alt text](results/solidWhiteCurve_Result.jpg)
-![alt text](results/solidYellowCurve_Result.jpg)
