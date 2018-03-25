@@ -20,7 +20,7 @@
 Увеличивая его, вы увеличиваете площадь размытия.
 - low_threshold, high_thresold
 
-Применяются для Canny function (поиск краев на изображениях).
+Применяются для Canny function (поиск краев объектов на изображениях).
 В начале включает пиксели с интенсивностью выше, чем high_threshold,
 а затем пиксели в диапазоне low_threshold < x < high_thresold. Остальные 
 отвергаются.
@@ -32,7 +32,9 @@
 Есть ещё параметры, которые влияют на поиск, но там много математики, поэтому
 лучше прослушать курс : https://classroom.udacity.com/courses/ud013-preview/
 
+Мои результаты ниже!
 
+<iframe width="854" height="480" src="results/solidWhiteRight.mp4" frameborder="0" allowfullscreen></iframe>
 ![alt text](results/solidWhiteRight_Result.jpg)
 ![alt text](results/solidWhiteCurve_Result.jpg)
 ![alt text](results/solidYellowCurve_Result.jpg)
