@@ -2,7 +2,7 @@
 Немного беспилотных автомобилей от онлайн курса Udacity.
 
 Один из проектов онлайн курса Self-driving car Engineer Nanodegree от Udactity.
-Цель курса - определить линии на дороге на изображении и видео.
+Цель проекта - определить разделяющие полосы на дороге на изображении и видео.
 На курсе посоветовали выложить свое творение на Github.
 
 Для запуска кода потребуется:
@@ -34,5 +34,5 @@
 
 Примеры ниже. Больше результатов можно посмотреть (включая поиск линий на видео) в папке results.
 
-![alt text](results/solidWhiteRight_Result.jpg)
 ![alt text](results/solidWhiteCurve_Result.jpg)
+![alt text](results/solidWhiteRight_Result.jpg)
